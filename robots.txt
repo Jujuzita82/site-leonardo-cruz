@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://psicologoleonardocruz.com.br/sitemap.xml

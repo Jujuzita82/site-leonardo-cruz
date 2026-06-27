@@ -1,0 +1,20 @@
+<svg viewBox="0 0 320 72" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0.05" y1="0.95" x2="0.95" y2="0.05">
+      <stop offset="0%" stop-color="#435892"/>
+      <stop offset="100%" stop-color="#BCAA8A"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(2, 8) scale(0.28)">
+    <path d="M21.6307 45.1604C24.2974 46.1604 32.8307 46.6604 53.6307 36.6604C79.6307 24.1604 150.5 -20.937 168 31.0634"
+          stroke="url(#g)" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+    <path d="M10.6309 70.1603C15.1309 71.9937 28.5309 74.7603 46.1309 71.1603C81.2216 63.9827 202.383 -13.7593 190.131 70.996M190.131 70.996C173.586 49.8818 135.979 63.8466 117.131 74.6609C105.131 83.1609 74.6309 97.6609 60.1309 101.661C47.1309 105.247 23.1309 104.161 12.1309 101.161C-5.4691 90.3609 3.79756 75.9938 10.6309 70.1603M10.6309 70.1603C7.46423 66.1605 4.1309 51.66 21.6309 45.1609C21.6309 45.1609 21.6309 50.7586 21.6309 36.6609C21.6309 22.5632 75.4998 -9.93725 130 6.56299M60.1309 101.661C93.167 101.661 113.305 103.941 129.131 134.661C139.977 155.716 139.259 107.16 153.631 104.661H185.631C193.631 103.661 202.511 95.0562 193.631 76.6609C192.608 74.5422 191.435 72.6601 190.131 70.996"
+          stroke="url(#g)" stroke-width="1.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  </g>
+
+  <line x1="65" y1="8" x2="65" y2="64" stroke="#E0DDD9" stroke-width="1"/>
+
+  <text x="77" y="31" font-family="Georgia, serif" font-size="30" font-weight="600" fill="#393F50" letter-spacing="0.3">Leonardo Cruz</text>
+  <text x="78" y="53" font-family="Arial, sans-serif" font-size="16" fill="#BCAA8A" letter-spacing="1.5">PSICÓLOGO CLÍNICO</text>
+</svg>

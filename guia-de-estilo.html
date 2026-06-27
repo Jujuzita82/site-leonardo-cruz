@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Estilo — Leonardo Cruz Psicólogo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #1E2D4A;
+      --blue:  #435892;
+      --cream: #F2EEE7;
+      --gold:  #BCAA8A;
+      --text:  #1E2D4A;
+      --text-light: #6B7280;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F7F5F1;
+      color: var(--text);
+    }
+
+    /* ── CAPA ── */
+    .cover {
+      background: var(--navy);
+      padding: 80px 6% 72px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .cover-logo img { height: 52px; }
+
+    .cover-meta {
+      max-width: 560px;
+    }
+
+    .cover-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .cover-title {
+      font-family: Georgia, serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .cover-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(242,238,231,0.55);
+      line-height: 1.7;
+    }
+
+    .cover-info {
+      display: flex;
+      gap: 48px;
+    }
+
+    .cover-info-item strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .cover-info-item span {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(242,238,231,0.6);
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 6%;
+    }
+
+    /* ── SEÇÃO ── */
+    .section {
+      padding: 72px 0;
+      border-bottom: 1px solid rgba(57,63,80,0.08);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .section-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    /* ── PALETA ── */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(57,63,80,0.08);
+    }
+
+    .swatch-color {
+      height: 120px;
+    }
+
+    .swatch-info {
+      background: #fff;
+      padding: 14px 16px;
+    }
+
+    .swatch-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .swatch-hex {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--text-light);
+      font-family: 'Courier New', monospace;
+      margin-bottom: 6px;
+    }
+
+    .swatch-use {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ── TIPOGRAFIA ── */
+    .type-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 24px;
+      align-items: center;
+      padding: 28px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 8px rgba(57,63,80,0.05);
+    }
+
+    .type-meta strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .type-meta span {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .type-sample-h1 {
+      font-family: Georgia, serif;
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    .type-sample-h2 {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .type-sample-h3 {
+      font-family: Georgia, serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .type-sample-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.75;
+      max-width: 480px;
+    }
+
+    .type-sample-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .type-sample-small {
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-light);
+    }
+
+    /* ── LOGO ── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .logo-card {
+      border-radius: 12px;
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .logo-card.light { background: #fff; box-shadow: 0 1px 8px rgba(57,63,80,0.06); }
+    .logo-card.dark  { background: var(--navy); }
+    .logo-card.cream { background: var(--cream); box-shadow: 0 1px 8px rgba(57,63,80,0.06); }
+
+    .logo-card img { height: 52px; width: auto; }
+
+    .logo-card-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .logo-card.light .logo-card-label,
+    .logo-card.cream .logo-card-label { color: var(--text-light); }
+    .logo-card.dark .logo-card-label  { color: rgba(242,238,231,0.4); }
+
+    .logo-icon-row {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      padding: 32px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 8px rgba(57,63,80,0.06);
+      margin-top: 16px;
+    }
+
+    .logo-icon-row img { height: 64px; width: auto; }
+
+    .logo-icon-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.6;
+      max-width: 340px;
+    }
+
+    .logo-icon-desc strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+
+    /* ── COMPONENTES ── */
+    .components-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .component-row {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 32px;
+      box-shadow: 0 1px 8px rgba(57,63,80,0.05);
+    }
+
+    .component-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 12px 24px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      display: inline-block;
+    }
+
+    .btn-ghost {
+      padding: 11px 24px;
+      background: transparent;
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 400;
+      border-radius: 6px;
+      border: 1px solid rgba(242,238,231,0.3);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-ghost-dark {
+      padding: 11px 24px;
+      background: transparent;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 400;
+      border-radius: 6px;
+      border: 1px solid rgba(57,63,80,0.2);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-nav {
+      padding: 8px 18px;
+      background: rgba(242,238,231,0.1);
+      color: var(--cream);
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 6px;
+      border: 1px solid rgba(242,238,231,0.2);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .tag-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag-filled {
+      padding: 6px 16px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 12px;
+      border-radius: 100px;
+    }
+
+    .tag-outline {
+      padding: 6px 16px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 12px;
+      border-radius: 100px;
+    }
+
+    .tag-subtle {
+      padding: 6px 16px;
+      background: rgba(67,88,146,0.08);
+      color: var(--blue);
+      font-size: 12px;
+      border-radius: 100px;
+    }
+
+    /* card demo */
+    .card-demo {
+      background: var(--cream);
+      border-radius: 12px;
+      padding: 24px;
+      max-width: 300px;
+    }
+
+    .card-demo-icon {
+      width: 40px; height: 40px;
+      background: rgba(67,88,146,0.1);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .card-demo-icon svg { width: 18px; height: 18px; stroke: var(--blue); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    .card-demo h3 {
+      font-family: Georgia, serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .card-demo p {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* service item demo */
+    .service-demo {
+      padding: 16px 18px;
+      border-left: 2px solid var(--gold);
+      background: rgba(188,170,138,0.07);
+      border-radius: 0 8px 8px 0;
+      max-width: 360px;
+    }
+
+    .service-demo h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .service-demo p {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ── RODAPÉ ── */
+    .guide-footer {
+      background: var(--navy);
+      padding: 48px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .guide-footer img { height: 36px; }
+
+    .guide-footer p {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(242,238,231,0.35);
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      .palette-grid { grid-template-columns: 1fr 1fr; }
+      .logo-grid { grid-template-columns: 1fr; }
+      .type-row { grid-template-columns: 1fr; }
+      .cover-info { flex-direction: column; gap: 20px; }
+      .guide-footer { flex-direction: column; gap: 20px; text-align: center; }
+      .guide-footer p { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="cover">
+  <div class="cover-logo">
+    <img src="img/logo-light.svg" alt="Leonardo Cruz Psicólogo">
+  </div>
+  <div class="cover-meta">
+    <p class="cover-label">Identidade Visual</p>
+    <h1 class="cover-title">Guia de Estilo</h1>
+    <p class="cover-sub">Documento de referência visual para o site psicologoleonardocruz.com.br — paleta de cores, tipografia, logo e componentes de interface.</p>
+  </div>
+  <div class="cover-info">
+    <div class="cover-info-item">
+      <strong>Cliente</strong>
+      <span>Leonardo Cruz</span>
+    </div>
+    <div class="cover-info-item">
+      <strong>Versão</strong>
+      <span>1.0 — Junho 2026</span>
+    </div>
+    <div class="cover-info-item">
+      <strong>Produzido por</strong>
+      <span>Campana Digital</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 00 RACIONAL -->
+  <div class="section">
+    <p class="section-num">00 — Racional</p>
+    <h2 class="section-title">Por que essas escolhas?</h2>
+    <p class="section-desc">Cada decisão visual foi tomada com base no perfil e na atuação de Leonardo Cruz — não em tendências genéricas de design.</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+
+      <div style="background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 8px rgba(57,63,80,0.05);">
+        <p style="font-size:11px; font-weight:600; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Paleta sóbria e calorosa</p>
+        <p style="font-size:13px; font-weight:400; color:var(--navy); margin-bottom:8px; line-height:1.5;">O navy e o azul transmitem <strong>seriedade e confiança</strong> — essenciais tanto para o consultório quanto para o ambiente corporativo. O creme e o dourado suavizam e conferem <strong>acolhimento</strong>, sem infantilizar a identidade.</p>
+        <p style="font-size:12px; font-weight:300; color:var(--text-light); line-height:1.6;">Evitamos paletas pastéis típicas de marcas de bem-estar, pois Leonardo atua também com empresas e laudos técnicos — contextos que exigem uma postura mais profissional.</p>
+      </div>
+
+      <div style="background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 8px rgba(57,63,80,0.05);">
+        <p style="font-size:11px; font-weight:600; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Georgia nos títulos</p>
+        <p style="font-size:13px; font-weight:400; color:var(--navy); margin-bottom:8px; line-height:1.5;">A fonte serifada escolhida para títulos remete à <strong>tradição, credibilidade e autoridade</strong> — qualidades associadas à psicologia clínica e à documentação técnica (laudos, PGR, pareceres).</p>
+        <p style="font-size:12px; font-weight:300; color:var(--text-light); line-height:1.6;">Inter no corpo garante leveza e leiturabilidade — o contraste entre serif e sans-serif cria uma hierarquia visual clara sem esforço.</p>
+      </div>
+
+      <div style="background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 8px rgba(57,63,80,0.05);">
+        <p style="font-size:11px; font-weight:600; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Ícone do cérebro</p>
+        <p style="font-size:13px; font-weight:400; color:var(--navy); margin-bottom:8px; line-height:1.5;">O símbolo do cérebro representa <strong>as duas frentes de atuação</strong> de Leonardo: a clínica (saúde mental individual) e a técnica (avaliação psicossocial ocupacional).</p>
+        <p style="font-size:12px; font-weight:300; color:var(--text-light); line-height:1.6;">O estilo de traço linear e o gradiente azul-dourado modernizam o símbolo, distanciando-o do estereótipo de consultório e posicionando a marca no cruzamento entre ciência e cuidado.</p>
+      </div>
+
+      <div style="background:#fff; border-radius:12px; padding:28px; box-shadow:0 1px 8px rgba(57,63,80,0.05);">
+        <p style="font-size:11px; font-weight:600; color:var(--gold); letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Estrutura dual PF + PJ</p>
+        <p style="font-size:13px; font-weight:400; color:var(--navy); margin-bottom:8px; line-height:1.5;">A arquitetura do site foi pensada para <strong>dois públicos distintos</strong> sem criar confusão: a pessoa que busca terapia e a empresa que precisa de assessoria NR-1.</p>
+        <p style="font-size:12px; font-weight:300; color:var(--text-light); line-height:1.6;">Cada página tem linguagem, tom e CTAs próprios — mas a identidade visual une os dois mundos com coerência, reforçando que o mesmo profissional atende ambos com excelência.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 01 PALETA -->
+  <div class="section">
+    <p class="section-num">01 — Paleta de Cores</p>
+    <h2 class="section-title">Cores da identidade</h2>
+    <p class="section-desc">A paleta foi construída para transmitir confiança, sobriedade e acolhimento — valores centrais da prática clínica e da assessoria corporativa de Leonardo Cruz.</p>
+
+    <div class="palette-grid">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1E2D4A;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Navy</p>
+          <p class="swatch-hex">#1E2D4A</p>
+          <p class="swatch-use">Cor principal. Header, textos, fundo escuro.</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#435892;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Azul</p>
+          <p class="swatch-hex">#435892</p>
+          <p class="swatch-use">Cor de ação. Botões, links e destaques.</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F2EEE7; border: 1px solid #e5e0d8;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Creme</p>
+          <p class="swatch-hex">#F2EEE7</p>
+          <p class="swatch-use">Fundo suave. Seções alternadas, backgrounds.</p>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#BCAA8A;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Dourado</p>
+          <p class="swatch-hex">#BCAA8A</p>
+          <p class="swatch-use">Acento elegante. Labels, detalhes e ícone da logo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 TIPOGRAFIA -->
+  <div class="section">
+    <p class="section-num">02 — Tipografia</p>
+    <h2 class="section-title">Fontes e hierarquia</h2>
+    <p class="section-desc">Georgia para títulos — elegante e com autoridade. Inter para corpo de texto — limpa, legível e moderna. A combinação cria um equilíbrio entre sofisticação e clareza.</p>
+
+    <div class="type-stack">
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Título H1</strong>
+          <span>Georgia · 44px · 600<br>Páginas principais e hero</span>
+        </div>
+        <div class="type-sample-h1">Psicólogo<br>Clínico</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Título H2</strong>
+          <span>Georgia · 30px · 600<br>Títulos de seção</span>
+        </div>
+        <div class="type-sample-h2">Um trabalho, dois caminhos</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Título H3</strong>
+          <span>Georgia · 16–18px · 600<br>Cards e subseções</span>
+        </div>
+        <div class="type-sample-h3">Atendimento Individual</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Corpo</strong>
+          <span>Inter · 14–16px · 300<br>Texto corrido e descrições</span>
+        </div>
+        <div class="type-sample-body">Acompanhamento psicológico com TCC para adolescentes, adultos e idosos. Um espaço seguro e acolhedor para quem busca cuidar da saúde mental.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Label</strong>
+          <span>Inter · 11px · 600<br>Rótulos e eyebrows</span>
+        </div>
+        <div class="type-sample-label">Como posso ajudar</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <strong>Legenda</strong>
+          <span>Inter · 11–12px · 300<br>Notas e informações secundárias</span>
+        </div>
+        <div class="type-sample-small">CRP 05/65066 · Ilha do Governador, Rio de Janeiro</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 LOGO -->
+  <div class="section">
+    <p class="section-num">03 — Logo</p>
+    <h2 class="section-title">Variações da marca</h2>
+    <p class="section-desc">O ícone do cérebro representa a atuação clínica e técnica de Leonardo Cruz. O gradiente azul-dourado remete à seriedade e à sofisticação da identidade.</p>
+
+    <div class="logo-grid">
+      <div class="logo-card dark">
+        <p class="logo-card-label">Versão principal · Fundo escuro</p>
+        <img src="img/logo-light.svg" alt="Logo versão clara">
+      </div>
+      <div class="logo-card cream">
+        <p class="logo-card-label">Versão alternativa · Fundo claro</p>
+        <img src="img/logo.svg" alt="Logo versão escura">
+      </div>
+    </div>
+
+    <div class="logo-icon-row">
+      <img src="img/logo-icon.svg" alt="Ícone cérebro">
+      <div class="logo-icon-desc">
+        <strong>Ícone isolado</strong>
+        O símbolo do cérebro pode ser usado de forma independente em contextos onde o nome já está presente — como favicon, ícone de app ou avatar.
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 COMPONENTES -->
+  <div class="section">
+    <p class="section-num">04 — Componentes</p>
+    <h2 class="section-title">Elementos de interface</h2>
+    <p class="section-desc">Biblioteca de componentes visuais usados no site — botões, tags, cards e itens de serviço com seus estados e variações.</p>
+
+    <div class="components-grid">
+
+      <!-- Botões -->
+      <div class="component-row">
+        <p class="component-label">Botões</p>
+        <div class="btn-row">
+          <a class="btn-primary">Atendimento Individual</a>
+          <a class="btn-ghost">Para Empresas</a>
+          <a class="btn-ghost-dark">Saiba mais</a>
+          <a class="btn-nav">Agendar</a>
+        </div>
+      </div>
+
+      <!-- Tags -->
+      <div class="component-row">
+        <p class="component-label">Tags e Badges</p>
+        <div class="tag-row">
+          <span class="tag-filled">Presencial</span>
+          <span class="tag-filled">Online</span>
+          <span class="tag-filled">Domiciliar</span>
+          <span class="tag-outline">TCC</span>
+          <span class="tag-subtle">NR-1</span>
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="component-row">
+        <p class="component-label">Card de serviço</p>
+        <div class="card-demo">
+          <div class="card-demo-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>Atendimento Individual</h3>
+          <p>Acompanhamento psicológico com TCC para adolescentes, adultos e idosos em um espaço seguro e acolhedor.</p>
+        </div>
+      </div>
+
+      <!-- Service item -->
+      <div class="component-row">
+        <p class="component-label">Item de serviço</p>
+        <div class="service-demo">
+          <h4>Avaliação Psicossocial Ocupacional</h4>
+          <p>Aplicação de entrevistas e testes psicológicos para mapeamento completo dos riscos conforme NR-1.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- RODAPÉ -->
+<div class="guide-footer">
+  <img src="img/logo-light.svg" alt="Leonardo Cruz Psicólogo">
+  <p>Guia de Estilo v1.0 · Junho 2026<br>Produzido por Campana Digital · jucampana.com/digital</p>
+</div>
+
+</body>
+</html>
