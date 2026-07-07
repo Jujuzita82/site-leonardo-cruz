@@ -1,7 +1,43 @@
+// ====================================================================
+// GOOGLE ANALYTICS 4
+// Cole o ID de medicao da propriedade GA4 abaixo (formato G-XXXXXXXXXX).
+// Enquanto estiver com o placeholder, nada e carregado (sem erro).
+const GA_ID = 'G-XXXXXXXXXX';
+// ====================================================================
+
+function initAnalytics() {
+  if (!GA_ID || GA_ID.slice(0, 2) !== 'G-' || GA_ID === 'G-XXXXXXXXXX') return;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID);
+}
+
+function trackEvent(name, params) {
+  if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const page = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('nav a:not(.btn-nav)').forEach(link => {
     if (link.getAttribute('href') === page) link.classList.add('active');
+  });
+
+  initAnalytics();
+
+  // ── Rastreio de cliques (WhatsApp e e-mail) ──
+  document.querySelectorAll('a[href*="wa.me"], a[href^="https://api.whatsapp"]').forEach(a => {
+    a.addEventListener('click', () => trackEvent('click_whatsapp', {
+      page: page,
+      link_text: (a.textContent || '').trim().slice(0, 60)
+    }));
+  });
+  document.querySelectorAll('a[href^="mailto:"]').forEach(a => {
+    a.addEventListener('click', () => trackEvent('click_email', { page: page }));
   });
 
   // ── Carrossel de depoimentos ──
