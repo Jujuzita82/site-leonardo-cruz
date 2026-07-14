@@ -2,7 +2,7 @@
 // GOOGLE ANALYTICS 4
 // Cole o ID de medicao da propriedade GA4 abaixo (formato G-XXXXXXXXXX).
 // Enquanto estiver com o placeholder, nada e carregado (sem erro).
-const GA_ID = 'G-XXXXXXXXXX';
+const GA_ID = 'G-EM9E5N6JCL';
 // ====================================================================
 
 function initAnalytics() {
